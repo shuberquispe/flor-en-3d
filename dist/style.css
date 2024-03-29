@@ -1,0 +1,217 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #002;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  perspective: 800px;
+}
+body * {
+  transform-style: preserve-3d;
+}
+
+.scene {
+  position: relative;
+  transform: rotateX(calc(var(--y, 0) * -40deg)) rotateY(calc(var(--x, 0) * 180deg));
+}
+
+.floor {
+  position: absolute;
+  inset: -1000px;
+  background-color: sandybrown;
+  background-image: radial-gradient(closest-side, transparent, #002), radial-gradient(Black, 1%, transparent), repeating-linear-gradient(0deg, transparent 0, #0001, transparent 10px), repeating-linear-gradient(60deg, transparent 0, #0001, transparent 10px), repeating-linear-gradient(120deg, transparent 0, #0001, transparent 10px);
+  transform: rotateX(90deg) translateZ(-200px);
+}
+
+.heart {
+  position: absolute;
+  left: 50%;
+}
+.heart::after {
+  content: "";
+  position: absolute;
+  inset: -50px;
+  background-color: var(--color, red);
+  background-image: radial-gradient(#fff4, transparent), linear-gradient(transparent, black);
+  -webkit-clip-path: path("m 50 25 a 25 25 0 0 1 50 0 c 0 25 -50 50 -50 75 c 0 -25 -50 -50 -50 -75 a 25 25 0 0 1 50 0");
+          clip-path: path("m 50 25 a 25 25 0 0 1 50 0 c 0 25 -50 50 -50 75 c 0 -25 -50 -50 -50 -75 a 25 25 0 0 1 50 0");
+}
+
+.flower {
+  position: absolute;
+  top: 200px;
+}
+.flower i {
+  position: absolute;
+  bottom: 100%;
+  width: 4px;
+  height: 80px;
+  background-color: limegreen;
+  transform-origin: bottom;
+  -webkit-animation: flower 5s infinite ease-in-out alternate;
+          animation: flower 5s infinite ease-in-out alternate;
+}
+@-webkit-keyframes flower {
+  from {
+    transform: rotateX(-5deg);
+  }
+  to {
+    transform: rotateX(5deg);
+  }
+}
+@keyframes flower {
+  from {
+    transform: rotateX(-5deg);
+  }
+  to {
+    transform: rotateX(5deg);
+  }
+}
+.flower .heart:nth-child(1) {
+  transform: rotateY(0deg) rotateX(27deg) translateY(-40px);
+}
+.flower .heart:nth-child(2) {
+  transform: rotateY(40deg) rotateX(4deg) translateY(-40px);
+}
+.flower .heart:nth-child(3) {
+  transform: rotateY(80deg) rotateX(22deg) translateY(-40px);
+}
+.flower .heart:nth-child(4) {
+  transform: rotateY(120deg) rotateX(3deg) translateY(-40px);
+}
+.flower .heart:nth-child(5) {
+  transform: rotateY(160deg) rotateX(28deg) translateY(-40px);
+}
+.flower .heart:nth-child(6) {
+  transform: rotateY(200deg) rotateX(23deg) translateY(-40px);
+}
+.flower .heart:nth-child(7) {
+  transform: rotateY(240deg) rotateX(24deg) translateY(-40px);
+}
+.flower .heart:nth-child(8) {
+  transform: rotateY(280deg) rotateX(5deg) translateY(-40px);
+}
+.flower .heart:nth-child(9) {
+  transform: rotateY(320deg) rotateX(3deg) translateY(-40px);
+}
+
+.leafs {
+  position: absolute;
+  top: 200px;
+}
+.leafs i {
+  position: absolute;
+  bottom: 100%;
+  width: 4px;
+  height: 75%;
+  background-color: limegreen;
+  transform-origin: bottom;
+  transform: rotateX(var(--rx));
+}
+.leafs > i:nth-child(1) {
+  left: -2px;
+  height: 47px;
+  rotate: y 0deg;
+  --rx: 22deg;
+  --color: hsl(120 100% 24);
+}
+.leafs > i:nth-child(2) {
+  left: -2px;
+  height: 61px;
+  rotate: y 30deg;
+  --rx: 16deg;
+  --color: hsl(120 100% 37);
+}
+.leafs > i:nth-child(3) {
+  left: -2px;
+  height: 46px;
+  rotate: y 60deg;
+  --rx: 32deg;
+  --color: hsl(120 100% 39);
+}
+.leafs > i:nth-child(4) {
+  left: -2px;
+  height: 60px;
+  rotate: y 90deg;
+  --rx: 13deg;
+  --color: hsl(120 100% 30);
+}
+.leafs > i:nth-child(5) {
+  left: -2px;
+  height: 76px;
+  rotate: y 120deg;
+  --rx: 11deg;
+  --color: hsl(120 100% 37);
+}
+.leafs > i:nth-child(6) {
+  left: -2px;
+  height: 55px;
+  rotate: y 150deg;
+  --rx: 11deg;
+  --color: hsl(120 100% 37);
+}
+.leafs > i:nth-child(7) {
+  left: -2px;
+  height: 48px;
+  rotate: y 180deg;
+  --rx: 18deg;
+  --color: hsl(120 100% 23);
+}
+.leafs > i:nth-child(8) {
+  left: -2px;
+  height: 70px;
+  rotate: y 210deg;
+  --rx: 23deg;
+  --color: hsl(120 100% 24);
+}
+.leafs > i:nth-child(9) {
+  left: -2px;
+  height: 78px;
+  rotate: y 240deg;
+  --rx: 34deg;
+  --color: hsl(120 100% 31);
+}
+.leafs > i:nth-child(10) {
+  left: -2px;
+  height: 80px;
+  rotate: y 270deg;
+  --rx: 11deg;
+  --color: hsl(120 100% 27);
+}
+.leafs > i:nth-child(11) {
+  left: -2px;
+  height: 50px;
+  rotate: y 300deg;
+  --rx: 17deg;
+  --color: hsl(120 100% 21);
+}
+.leafs > i:nth-child(12) {
+  left: -2px;
+  height: 57px;
+  rotate: y 330deg;
+  --rx: 18deg;
+  --color: hsl(120 100% 38);
+}
+.leafs .heart {
+  transform: rotate(180deg) translateY(25px);
+  filter: drop-shadow(0 0 25px #0005);
+}
+.leafs .heart::after {
+  background-image: repeating-linear-gradient(45deg, transparent 0, #0003, transparent 10px), linear-gradient(90deg, transparent 40%, #0003, transparent 60%), repeating-linear-gradient(-45deg, transparent 0, #0003, transparent 10px);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  background-position-x: 0%, 50%, 100%;
+}
+
+i::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  rotate: y 90deg;
+}
